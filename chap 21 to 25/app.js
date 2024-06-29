@@ -112,47 +112,85 @@
 
 //15. Write a program to take password as an input from user. The password must qualify these requirements: a. It should contain alphabets and numbers b. It should not start with a number c. It must at least 6 characters long If the password does not meet above requirements, prompt the user to enter a valid password. For character codes of a-z, A-Z & 0-9.
 
-// var password=prompt("Enter password : ");
-//     if (password.length < 6) {
-//         document.write("Password must be at least 6 characters long.");
-//     }
-    
-//     var hasAlphabet = false;
-//     var hasNumber = false;
+// var password = prompt("Enter password: ");
+// document.write("Entered password: " + password + "</br>");
 
-//     for (var i = 0; i < password.length; i++) {
-//         var charCode = password.charCodeAt(i);
-//         if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
-//             hasAlphabet = true;
+// var hasAlphabet = false;
+// var hasNumber = false;
+// var passwordLength = true;
+// var passwordStart = true;
+
+// // Check for alphabets and numbers in the password
+// for (var i = 0; i < password.length; i++) {
+//     var charCode = password.charCodeAt(i);
+//     if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+//         hasAlphabet = true;
+//     }
+//     if (charCode >= 48 && charCode <= 57) {
+//         hasNumber = true;
+//     }
+// }
+
+// // Check if password contains both alphabets and numbers
+// if (!hasAlphabet || !hasNumber) {
+//     document.write("Password must contain both alphabets and numbers." + "</br>");
+// }
+
+// // Check if password starts with a number
+// if (password.charCodeAt(0) >= 48 && password.charCodeAt(0) <= 57) {
+//     document.write("Password must not start with a number." + "</br>");
+//     passwordStart = false;
+// }
+
+// // Check if password is at least 6 characters long
+// if (password.length < 6) {
+//     document.write("Password must be at least 6 characters long." + "</br>");
+//     passwordLength = false;
+// }
+
+// // Check if password meets all criteria
+// if (hasAlphabet && hasNumber && passwordLength && passwordStart) {
+//     document.write("Password Approved");
+// } else {
+//     document.write("Please enter a valid Password");
+// }
+
+/*16. Write a program to convert the following string to an
+array using string split method.
+var university = “University of Karachi”;
+Display the elements of array in your browser. */
+
+// var university = "University of Karachi";
+//  var universityArray = university.split(" ");
+//         for (var i = 0; i < universityArray.length; i++) {
+//             document.write(universityArray[i] + "<br>");
 //         }
-//         if (charCode >= 48 && charCode <= 57) {
-//             hasNumber = true;
-//         }
-//     }
 
-//     if (!hasAlphabet || !hasNumber) {
-//         alert("Password must contain both alphabets and numbers.");
-//     }
+/*17. Write a program to display the last character of a user
+input.*/
+// var userInput=prompt("Enter any thing it will return last character of : ");
+// var lastCharacter=userInput.charAt(userInput.length-1)
+// document.write("User Input : " + userInput +"</br>");
+// document.write("Last character of input  : " + lastCharacter +"</br>" );
 
-//     if (password.charCodeAt(0) >= 48 && password.charCodeAt(0) <= 57) {
-//         alert("Password must not start with a number.");
-//     }
+/* 18. You have a string “The quick brown fox jumps over the
+lazy dog”. Write a program to count number of
+occurrences of word “the” in given string.*/ 
 
-   
+// var str = "The quick brown fox jumps over the lazy dog";
+// var targetWord = "the";
 
+// var lowerStr = str.toLowerCase();
+// var lowerTargetWord = targetWord.toLowerCase();
 
-
-
-
-
-
+// var words = lowerStr.split(" ");
 
 
+// var count = 0;
+// for (var i=0;i<words.length;i++) {
+//   if (words[i] == lowerTargetWord) {
+//     count++;
+//   }
+// }
 
-
-
-
-
-
-
-
+// console.log("The word 'the' " + " occurs " + count + " times.");
