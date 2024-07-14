@@ -135,11 +135,11 @@ Net Amount Payable (within Due Date) = Number of units * Charges per unit
 // var numberOfUnits=+prompt("Enter Number of units : ");
 // var ChargePerUnits=+prompt("Enter Charge per unit : ");
 // var netAmountPayable=numberOfUnits*ChargePerUnits;
-// var latePaymentsurcharge=+prompt("Enter Late payment surcharge : ");
-// var grossAmountPayable=netAmountPayable+latePaymentsurcharge;
-// console.log("K-Electric bill");
-// console.log("Customer name : " + customerName);
-// console.log("Month : " + currentmonth);
+var latePaymentsurcharge=+prompt("Enter Late payment surcharge : ");
+var grossAmountPayable=netAmountPayable+latePaymentsurcharge;
+console.log("K-Electric bill");
+console.log("Customer name : " + customerName);
+console.log("Month : " + currentmonth);
 // console.log("Number of Units : " + numberOfUnits);
 // console.log("Charges per unit : " + ChargePerUnits);
 // console.log("Net amount payable (within due date) : " + netAmountPayable);
