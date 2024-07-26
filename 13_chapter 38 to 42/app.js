@@ -39,18 +39,18 @@ Calculate area of triangle using 2 functions */
 // function calculateSemiPerimeter(a, b, c) {
 //     return (a + b + c) / 2;
 //   }
-  
-  // Function to calculate the area of the triangle
+
+// Function to calculate the area of the triangle
 //   function calculateArea(a, b, c) {
 //     var S = calculateSemiPerimeter(a, b, c);
 //     return "The Area of a Triangle is "  + (S * (S - a) * (S - b) * (S - c));
 //   }
-  
+
 //   var sideA =+prompt("Enter Side A"); //3;
 //   var sideB =+prompt("Enter Side B");//6;
 //   var sideC =+prompt("Enter Side C"); //7;
 //   console.log(calculateArea(sideA, sideB, sideC));
-  
+
 
 // 4. Write a function that receives marks received by a student in 3
 // subjects and returns the average and percentage of these
@@ -74,10 +74,155 @@ Calculate area of triangle using 2 functions */
 //     var percentage = calculatePercentage(a,b,c);
 //     console.log("Average of 3 subjects is "+ average);
 //     console.log("Percentage of 3 subjects is "+ percentage);
-    
+
 // }
 
 // var subj1 =+prompt("Enter marks of subject 1 : "); //3;
 //   var subj2 =+prompt("Enter marks of subject 2 :");//6;
 //   var subj3 =+prompt("Enter marks of subject 3 :"); //7;
 //   console.log(mainFunction(subj1, subj2, subj3));
+
+/* 5. You have learned the function indexOf. Code your own custom
+function that will perform the same functionality. You can code
+for single character as of now.*/
+
+/*function customIndexOf(str,ltr){
+for(i=0;i<str.length;i++){
+  if(str[i] === ltr){
+   return "The Index of a letter  " + ltr + " from the given string is " + i ;
+  }
+}
+return -1;
+}
+var str=prompt("Enter string :");
+var ltr=prompt("Enter letter :");
+alert(customIndexOf(str,ltr));*/
+
+/*6. Write a function to delete all vowels from a sentence. Assume
+that the sentence is not more than 25 characters long. */
+
+/*function deleteVowels(str){
+  var vowels="aeiouAEIOU";
+  var result=" ";
+  for(i=0;i<str.length;i++){
+    if(vowels.indexOf(str[i]) === -1){
+      result += str[i]
+    }
+    
+  }
+  return result;
+}
+var str=prompt("enter string");
+alert(deleteVowels(str));*/
+
+
+/*7. Write a function with switch statement to count the number of
+occurrences of any two vowels in succession in a line of text.
+For example, in the sentence
+
+“Pleases read this application and give me gratuity”
+Such occurrences are ea, ea, ui. */
+
+/*function countVowelPairs(text){
+    var count = 0;
+    var i = 0;
+    while(i<text.length-1){
+        var char1 = text[i].toLowerCase();
+        var char2 = text[i+1].toLowerCase();
+        var vowelPairs = [];
+
+        switch(true){
+            case (char1==="a" && (char2 ==="a"|| char2==="e"|| char2 ==="i"|| char2 ==="o" || char2=== "u")):
+            case (char1==="e" && (char2 ==="a"|| char2==="e"|| char2 ==="i"|| char2 ==="o" || char2=== "u")):
+            case (char1==="i" && (char2 ==="a"|| char2==="e"|| char2 ==="i"|| char2 ==="o" || char2=== "u")):  
+            case (char1==="o" && (char2 ==="a"|| char2==="e"|| char2 ==="i"|| char2 ==="o" || char2=== "u")):  
+            case (char1==="u" && (char2 ==="a"|| char2==="e"|| char2 ==="i"|| char2 ==="o" || char2=== "u")):
+                count++;
+                vowelPairs.push(char1+char2);
+                console.log(vowelPairs);
+                break;
+        }
+        i++;
+    }
+    return count;
+}
+alert(countVowelPairs("Please read this application and give me gratuity"));*/
+
+/*8. The distance between two cities (in km.) is input through the
+keyboard. Write four functions to convert and print this
+distance in meters, feet, inches and centimeters. */
+
+/*function kmIntoMeters(distance){
+  return "The distance " + distance + "km" + " into meter is " + distance*1000 + "m";
+}
+function kmIntoFeet(distance){
+  return "The distance " + distance + "km" + " into feet is " + (distance*3280.84).toFixed(2) + "feet";
+}
+function kmIntoInches(distance){
+  return "The distance " + distance + "km" + " into inches is " + (distance*39370.1).toFixed(2) + "inches";
+}
+function kmIntoCentimeter(distance){
+  return "The distance " + distance + "km" + " into centimeter is " + distance*100000 + "cm";
+}
+var distance=+prompt("Enter Distance in Kilometer : ");
+alert(kmIntoMeters(distance));
+alert(kmIntoFeet(distance));
+alert(kmIntoInches(distance));
+alert(kmIntoCentimeter(distance));*/
+
+
+/*9. Write a program to calculate overtime pay of employees.
+Overtime is paid at the rate of Rs. 12.00 per hour for every hour
+worked above 40 hours. Assume that employees do not work
+for fractional part of an hour. */
+
+/*function calculateOvertimePay(hoursWorked) {
+  var regularHours = 40;
+  var overtimeRate = 12.00;
+  var overtimePay = 0;
+
+  if (hoursWorked > regularHours) {
+      var overtimeHours = hoursWorked - regularHours;
+      overtimePay = overtimeHours * overtimeRate;
+  }
+
+  return overtimePay;
+}
+
+var hoursWorked = 45; 
+var overtimePay=(calculateOvertimePay(hoursWorked));
+console.log("Overtime pay for " + hoursWorked + " hours  worked is Rs. " +  overtimePay.toFixed(2));*/
+
+/*10. A cashier has currency notes of denominations 10, 50 and
+    100. If the amount to be withdrawn is input through the
+    keyboard in hundreds, find the total number of currency notes
+    of each denomination the cashier will have to give to the
+    withdrawer. */
+
+/*function calculateCurrencyNotes(amount) {
+  if (amount % 100 !== 0) {
+      return "Please enter the amount in multiples of 100.";
+  }
+
+  let hundreds = Math.floor(amount / 100);
+  let remainingAmount = amount % 100;
+
+  let fifties = Math.floor(remainingAmount / 50);
+  remainingAmount %= 50;
+
+  let tens = Math.floor(remainingAmount / 10);
+
+  return {
+      hundreds: hundreds,
+      fifties: fifties,
+      tens: tens
+  };
+}
+
+
+let amount = 470; 
+console.log(calculateCurrencyNotes(amount));*/
+
+
+
+
