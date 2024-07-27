@@ -199,30 +199,23 @@ console.log("Overtime pay for " + hoursWorked + " hours  worked is Rs. " +  over
     of each denomination the cashier will have to give to the
     withdrawer. */
 
-/*function calculateCurrencyNotes(amount) {
-  if (amount % 100 !== 0) {
-      return "Please enter the amount in multiples of 100.";
-  }
+// function currencyNoteCalculator(amount){//470
+// var note100 = Math.floor(amount/100) //4
+// var remainingAmount = amount%100 //70
 
-  let hundreds = Math.floor(amount / 100);
-  let remainingAmount = amount % 100;
+// var note50 = Math.floor(remainingAmount/50) //1
+// remainingAmount = remainingAmount %50 //20
 
-  let fifties = Math.floor(remainingAmount / 50);
-  remainingAmount %= 50;
-
-  let tens = Math.floor(remainingAmount / 10);
-
-  return {
-      hundreds: hundreds,
-      fifties: fifties,
-      tens: tens
-  };
-}
+// var note10 = Math.floor(remainingAmount/10) //2
 
 
-let amount = 470; 
-console.log(calculateCurrencyNotes(amount));*/
-
+// return[note100, note50, note10]
+// }
+// var am = prompt("Enter your amount:")
+// var result = currencyNoteCalculator(am)
+// console.log("Note 100: "+ result[0])
+// console.log("Note 50: "+ result[1])
+// console.log("Note 10: "+ result[2])
 
 
 
