@@ -79,10 +79,52 @@ Hint:
 Bonus : use can use localStorage to save records. */
 
 
-function Record(name, gender, address, education, profession) {
+// Constructor function for population record
+function PopulationRecord(name, gender, address, education, profession) {
     this.name = name;
     this.gender = gender;
     this.address = address;
     this.education = education;
     this.profession = profession;
 }
+
+// Function to save record to localStorage
+function saveRecord(record) {
+    let records = JSON.parse(localStorage.getItem("populationRecords")) || [];
+    records.push(record);
+    localStorage.setItem("populationRecords", JSON.stringify(records));
+    displayRecords();
+}
+
+// Function to display records from localStorage
+function displayRecords() {
+    let recordsList = document.getElementById("recordsList");
+    let records = JSON.parse(localStorage.getItem("populationRecords")) || [];
+
+    recordsList.innerHTML = "";
+    records.forEach((record, index) => {
+        let listItem = document.createElement("li");
+        listItem.textContent = `${index + 1}. Name: ${record.name}, Gender: ${record.gender}, Address: ${record.address}, Education: ${record.education}, Profession: ${record.profession}`;
+        recordsList.appendChild(listItem);
+    });
+}
+
+// Event listener for form submission
+document.getElementById("populationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+    let address = document.getElementById("address").value;
+    let education = document.getElementById("education").value;
+    let profession = document.getElementById("profession").value;
+
+    let newRecord = new PopulationRecord(name, gender, address, education, profession);
+    saveRecord(newRecord);
+
+    // Clear the form after submission
+    document.getElementById("populationForm").reset();
+});
+
+// Display saved records on page load
+window.onload = displayRecords;
